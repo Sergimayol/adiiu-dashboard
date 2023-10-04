@@ -1,4 +1,5 @@
 import sqlite3
+from typing import Optional, Union, Any, List
 from .config import DB_PATH
 
 
@@ -8,7 +9,7 @@ def get_db():
     return conn
 
 
-def execute_sql(sql, params=None, commit=True, fetchone=False, fetchall=False):
+def execute_sql(sql, params=None, commit=True, fetchone=False, fetchall=False) -> Optional[Union[Any, List[Any]]]:
     conn = get_db()
     cur = conn.cursor()
     if params is None:
