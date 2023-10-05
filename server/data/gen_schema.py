@@ -5,7 +5,7 @@ import pandas as pd
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023
 DATA_DIR = os.path.join(BASE_DIR, "data", "spotify-2023.csv")
-DB_DIR = os.path.join(BASE_DIR, "db.sqlite3")
+DB_DIR = os.path.join(BASE_DIR, "data", "db.sqlite3")
 VERBOSE = True
 
 if __name__ == "__main__":
