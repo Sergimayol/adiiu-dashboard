@@ -14,8 +14,20 @@ def run_client():
     os.system("python app.py")
 
 
+def check_for_db(base):
+    db_path = os.path.join(base, "server", "data", "db.sqlite3")
+    if os.path.exists(db_path):
+        return
+    print("[INFO] Database not found. Generating Database")
+    os.chdir("server")
+    os.chdir("data")
+    os.system("python gen_schema.py")
+    os.chdir(base)
+
+
 if __name__ == "__main__":
     base = os.path.dirname(os.path.realpath(__file__))
+    check_for_db(base)
     os.chdir(base)
     server = multiprocessing.Process(target=run_server)
     os.chdir(base)
