@@ -15,7 +15,7 @@ def get_songs_mode_vs_streams():
 def get_songs_releasedyear_vs_numsongs():
     return execute_sql(
         # GET released year as unix timestamp
-        "SELECT released_year, COUNT(*) AS numsongs FROM songs GROUP BY released_year ORDER BY released_year ASC",
+        "SELECT released_year, COUNT(*) AS numsongs FROM songs GROUP BY released_year HAVING released_year >= 2000 ORDER BY released_year ASC",
         fetchall=True,
     )
 
