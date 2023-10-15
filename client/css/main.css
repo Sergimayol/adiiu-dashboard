@@ -3,3 +3,34 @@
     min-width: 25%;
     max-width: 100%;
 }
+.horizontal-gradient {
+    background: linear-gradient(to right, #ed11a3, #53204a);
+}
+.simple-linear {
+    background: linear-gradient(#ed11a3, #53204a);
+}
+.navbar-brand {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight:normal;
+    color: #fff;
+}
+.nav-item:hover{
+    background-color: #000000;
+}
+
+.nav-item .nav-link:hover {
+    background-color: #000000;
+    transition: all 0.3s ease;
+    border-radius: 0.55rem;
+    color: #ed11a3;
+}
+
+.nav-link .bi {
+    color: #fff;
+    transition: all 1s;
+}
+
+.nav-link:hover .bi {
+    transform: rotate(360deg);
+    color: #000000;
+}

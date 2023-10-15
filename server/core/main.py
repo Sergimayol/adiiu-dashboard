@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .songs import get_artists_occurences, get_songs, get_songs_mode_vs_streams, get_songs_releasedyear_vs_numsongs
+from .songs import get_artists_occurences, get_songs, get_songs_mode_vs_streams, get_songs_releasedyear_vs_numsongs,get_artists_with_most_streams, get_songs_with_most_streams, get_songs_from_the_weeknd
 
 app = FastAPI()
 
@@ -51,5 +51,26 @@ async def releaseday_numsongs():
 async def artist_occurences():
     data = get_artists_occurences()
     data = [{"name": row[0].lstrip(), "weight": row[1]} for row in data]
+
+    return {"data": data}
+
+@app.get("/songs/artist-moststreams")
+async def artist_moststreams():
+    data = get_artists_with_most_streams()
+    data = [[row[0], row[1]] for row in data]
+
+    return {"data": data}
+
+@app.get("/songs/songs-moststreams")
+async def songs_moststreams():
+    data = get_songs_with_most_streams()
+    data = [[row[0], row[1]] for row in data]
+
+    return {"data": data}
+
+@app.get("/songs/songs-weeknd")
+async def songs_weeknd():
+    data = get_songs_from_the_weeknd()
+    data = [[row[0], row[1]] for row in data]
 
     return {"data": data}
