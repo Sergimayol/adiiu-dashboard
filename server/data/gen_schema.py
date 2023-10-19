@@ -14,7 +14,9 @@ if __name__ == "__main__":
     df = df.assign(**{col: df[col].str.split(",") for col in ["artist(s)_name"]}).explode("artist(s)_name")
     # Rename the column "artist(s)_name" to "artist_name"
     df = df.rename(columns={"artist(s)_name": "artist_name"})
-    print(df.info(verbose=VERBOSE))
+    df["artist_name"] = df["artist_name"].str.strip()
+    df["artist_name"] = df["artist_name"].replace("Bad B", "Bad Bunny")
+    df.info(verbose=VERBOSE)
     conn = sqlite3.connect(DB_DIR)
     df.to_sql("songs", conn, if_exists="replace", index=True, index_label="id")
     conn.close()
