@@ -8,7 +8,6 @@ async function fetchAPI(url) {
 }
 const artistSelect = document.getElementById("artistSelect");
 function loadChartsData(artistSelect) {
-  console.log(artistSelect);
   const urls = [
     "http://127.0.0.1:8000/songs/artist-occurences",
     "http://127.0.0.1:8000/songs/releaseday-numsongs",
@@ -30,7 +29,6 @@ function loadChartsData(artistSelect) {
     })
     .then(() => {
       console.log("All charts loaded successfully");
-      console.log(artistSelect);
     })
     .catch((error) => {
       console.error("Error loading charts:", error);
@@ -39,7 +37,6 @@ function loadChartsData(artistSelect) {
 // Escucha el evento de cambio en el desplegable
 artistSelect.addEventListener("change", function () {
   const selectedArtist = artistSelect.value;
-  console.log(selectedArtist);
   loadChartsData(selectedArtist);
 });
 

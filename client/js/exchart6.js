@@ -1,5 +1,4 @@
 function exchart6(data) {
-  console.log(data);
     var chartData = data.map(function(item) {
         return { name: item[0], y: item[1] };
       });
