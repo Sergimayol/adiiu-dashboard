@@ -33,7 +33,7 @@
   <nav class="navbar navbar-expand-md navbar-dark horizontal-gradient">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img id="dashboard-logo" src="assets/iconNav.png" alt="dashboard-logo" draggable="false" height="40" /> Spotify
+        <img id="dashboard-logo" src="assets/iconNav.png" alt="dashboard-logo" draggable="false" height="40"> Spotify
         Top songs 2023</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -153,6 +153,7 @@
         </div>
       </div>
     </div>
+    </div>
 
 
     <!-- content -->
@@ -196,7 +197,14 @@
             </figure>
           </div>
         </div>
+        <!-- chart 6 -->
         <div class="row flex align-items-center justify-content-center">
+          <select id="artistSelect" class="form-select form-select-md mb-3">
+            <option selected value="The Weeknd">The Weekend</option>
+            <option value="Taylor Swift">Taylor Swift</option>
+            <option value="Bad Bunny">Bad Bunny</option>
+            <option value="Ed Sheeran">Ed Sheeran</option>
+          </select>
           <div class="col-sm-11">
             <figure class="highcharts-figure">
               <div id="chart6"></div>

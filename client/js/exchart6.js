@@ -1,4 +1,5 @@
 function exchart6(data) {
+  console.log(data);
     var chartData = data.map(function(item) {
         return { name: item[0], y: item[1] };
       });
@@ -7,7 +8,7 @@ function exchart6(data) {
           type: 'variablepie'
         },
         title: {
-          text: 'Songs streamed from the most streamed artist',
+          text: 'Songs streamed from the artist selected',
           align: 'left'
         },
         tooltip: {

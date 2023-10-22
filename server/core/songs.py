@@ -30,10 +30,12 @@ def get_songs_with_most_streams():
        "SELECT track_name, SUM(streams) AS streams FROM songs GROUP BY track_name ORDER BY streams DESC  LIMIT 0,20",
         fetchall=True,
     )
-def get_songs_from_the_weeknd():
+
+def get_songs_from_artist(artist):
+    artist_name = f"'%{artist}%'"
     return execute_sql(
-        " SELECT track_name, SUM(streams) FROM songs WHERE artist_name LIKE '%The Weeknd%' GROUP BY track_name ORDER BY SUM(streams) DESC LIMIT 0,15",
-        fetchall=True,
+        " SELECT track_name, SUM(streams) FROM songs WHERE artist_name LIKE "+ artist_name+" GROUP BY track_name ORDER BY SUM(streams) DESC LIMIT 0,15",
+         fetchall=True,
     )
 
 def get_artists_occurences():

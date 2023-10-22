@@ -6,15 +6,16 @@ async function fetchAPI(url) {
   const data = await response.json();
   return data;
 }
-
-function loadChartsData() {
+const artistSelect = document.getElementById("artistSelect");
+function loadChartsData(artistSelect) {
+  console.log(artistSelect);
   const urls = [
     "http://127.0.0.1:8000/songs/artist-occurences",
     "http://127.0.0.1:8000/songs/releaseday-numsongs",
     "http://127.0.0.1:8000/songs/mode-streams",
     "http://127.0.0.1:8000/songs/artist-moststreams",
     "http://127.0.0.1:8000/songs/songs-moststreams",
-    "http://127.0.0.1:8000/songs/songs-weeknd",
+    `http://127.0.0.1:8000/songs/${artistSelect}`,
   ];
 
   // Usar Promise.all() para manejar múltiples solicitudes en paralelo
@@ -29,10 +30,18 @@ function loadChartsData() {
     })
     .then(() => {
       console.log("All charts loaded successfully");
+      console.log(artistSelect);
     })
     .catch((error) => {
       console.error("Error loading charts:", error);
     });
 }
+// Escucha el evento de cambio en el desplegable
+artistSelect.addEventListener("change", function () {
+  const selectedArtist = artistSelect.value;
+  console.log(selectedArtist);
+  loadChartsData(selectedArtist);
+});
 
-loadChartsData();
+loadChartsData(artistSelect.value);
+
