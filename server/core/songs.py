@@ -28,7 +28,7 @@ def get_artists_with_most_streams():
 
 def get_songs_with_most_streams():
     return execute_sql(
-        "SELECT track_name, SUM(streams) AS streams FROM songs GROUP BY track_name ORDER BY streams DESC  LIMIT 0,20",
+        "SELECT DISTINCT(track_name), SUM(streams) as st FROM songs GROUP BY track_name, artist_name ORDER BY st DESC LIMIT 20",
         fetchall=True,
     )
 
