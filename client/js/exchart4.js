@@ -4,7 +4,7 @@ function exchart4(data) {
         type: 'bar',
       },
       title: {
-        text: "Artist with most streams song",
+        text: "Artists with most streams song",
       },
       xAxis: {
         categories: data.map(item => item[0]),

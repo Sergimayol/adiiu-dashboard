@@ -3,7 +3,7 @@ function exchart1(data) {
     accessibility: {
       screenReaderSection: {
         beforeChartFormat:
-          "<h5>{chartTitle}</h5>" +
+          "<h1>{chartTitle}</h5>" +
           "<div>{chartSubtitle}</div>" +
           "<div>{chartLongdesc}</div>" +
           "<div>{viewTableButton}</div>",
