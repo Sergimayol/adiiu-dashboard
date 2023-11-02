@@ -1,5 +1,14 @@
 function exchart3(data) {
   Highcharts.chart("modevsstreams", {
+    accessibility: {
+      screenReaderSection: {
+        beforeChartFormat:
+          "<h1>{chartTitle}</h5>" +
+          "<div>{chartSubtitle}</div>" +
+          "<div>{chartLongdesc}</div>" +
+          "<div>{viewTableButton}</div>",
+      },
+    },
     chart: {
       plotBackgroundColor: null,
       plotBorderWidth: null,
@@ -9,6 +18,10 @@ function exchart3(data) {
     title: {
       text: "Songs Mode vs Streams",
       align: "center",
+    },
+    subtitle: {
+      text: "",
+      align: "left",
     },
     tooltip: {
       pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",

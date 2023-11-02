@@ -1,5 +1,14 @@
 function exchart2(data) {
   Highcharts.chart("chart2", {
+    accessibility: {
+      screenReaderSection: {
+        beforeChartFormat:
+          "<h1>{chartTitle}</h5>" +
+          "<div>{chartSubtitle}</div>" +
+          "<div>{chartLongdesc}</div>" +
+          "<div>{viewTableButton}</div>",
+      },
+    },
     chart: {
       zoomType: "x",
     },

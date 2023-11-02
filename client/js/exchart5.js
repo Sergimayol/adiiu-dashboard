@@ -1,10 +1,23 @@
 function exchart5(data) {
     Highcharts.chart("chart5", {
+      accessibility: {
+        screenReaderSection: {
+          beforeChartFormat:
+            "<h1>{chartTitle}</h5>" +
+            "<div>{chartSubtitle}</div>" +
+            "<div>{chartLongdesc}</div>" +
+            "<div>{viewTableButton}</div>",
+        },
+      },
         chart: {
             type: 'column',
         },
         title: {
             text: 'Most streamed songs'
+        },
+        subtitle: {
+          text: "The top songs with the number of streams of each one",
+          align: "left",
         },
         plotOptions: {
             column: {

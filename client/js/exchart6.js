@@ -3,12 +3,25 @@ function exchart6(data) {
         return { name: item[0], y: item[1] };
       });
     Highcharts.chart('chart6', {
+      accessibility: {
+        screenReaderSection: {
+          beforeChartFormat:
+            "<h1>{chartTitle}</h5>" +
+            "<div>{chartSubtitle}</div>" +
+            "<div>{chartLongdesc}</div>" +
+            "<div>{viewTableButton}</div>",
+        },
+      },
         chart: {
           type: 'variablepie'
         },
         title: {
           text: 'Songs streamed from the artist selected',
           align: 'left'
+        },
+        subtitle: {
+          text: "Top songs from the artist selected",
+          align: "left",
         },
         tooltip: {
           headerFormat: '',
