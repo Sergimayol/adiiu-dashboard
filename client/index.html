@@ -2,227 +2,231 @@
 <html lang="en">
 
 <head>
-  <title>Most Streamed Spotify Songs in 2023 Dashboard</title>
-  <meta charset="UTF-8" >
-  <meta name="description" content="Authors: Sergi Mayol y Aina Maria Tur Serrano. This is the first project for the ADDIU subject.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/main.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-  <script defer src="https://code.highcharts.com/highcharts.js"></script>
-  <script defer src="https://code.highcharts.com/modules/streamgraph.js"></script>
-  <script defer src="https://code.highcharts.com/modules/data.js"></script>
-  <script defer src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script defer src="https://code.highcharts.com/modules/export-data.js"></script>
-  <script defer src="https://code.highcharts.com/modules/accessibility.js"></script>
-  <script defer src="https://code.highcharts.com/modules/wordcloud.js"></script>
-  <script defer src="https://code.highcharts.com/modules/variable-pie.js"></script>
-  <script defer src="js/exchart.js"></script>
-  <script defer src="js/exchart2.js"></script>
-  <script defer src="js/exchart3.js"></script>
-  <script defer src="js/exchart4.js"></script>
-  <script defer src="js/exchart5.js"></script>
-  <script defer src="js/exchart6.js"></script>
-  <script defer src="js/main.js"></script>
+    <title>Most Streamed Spotify Songs in 2023 Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Authors: Sergi Mayol y Aina Maria Tur Serrano. This is the first project for the ADDIU subject.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script defer src="https://code.highcharts.com/highcharts.js"></script>
+    <script defer src="https://code.highcharts.com/modules/streamgraph.js"></script>
+    <script defer src="https://code.highcharts.com/modules/data.js"></script>
+    <script defer src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script defer src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script defer src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script defer src="https://code.highcharts.com/modules/wordcloud.js"></script>
+    <script defer src="https://code.highcharts.com/modules/variable-pie.js"></script>
+    <script defer src="js/exchart.js"></script>
+    <script defer src="js/exchart2.js"></script>
+    <script defer src="js/exchart3.js"></script>
+    <script defer src="js/exchart4.js"></script>
+    <script defer src="js/exchart5.js"></script>
+    <script defer src="js/exchart6.js"></script>
+    <script defer src="js/main.js"></script>
 </head>
 
 <body class="bg-black">
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark horizontal-gradient">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img id="dashboard-logo" src="assets/iconNav.png" alt="dashboard-logo" draggable="false" height="40"> Spotify
-        Top songs 2023</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item rounded">
-            <a class="nav-link" href="https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023"
-              target="_blank">
-              Data by
-              <img src="assets/spotify.png" alt="Spotify dataset" height="30" width="30" class="rounded">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark horizontal-gradient">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img id="dashboard-logo" src="assets/iconNav.png" alt="dashboard-logo" draggable="false" height="40">
+                Spotify Top songs 2023
             </a>
-          </li>
-        </ul>
-        <div class="d-flex">
-          <ul class="d-flex navbar-nav me-auto mb-2 mb-md-0 text-white">
-            <li class="nav-item rounded">
-              <a class="nav-link" href="https://www.uib.es/es/" target="_blank">
-                <img src="assets/uib.png" alt="uib website" height="30" width="30">
-              </a>
-            </li>
-            <li class="nav-item rounded">
-              <a class="nav-link" href="https://github.com/Sergimayol/adiu-dashboard" target="_blank">
-                <img src="assets/github.png" alt="source code - github" height="30" width="30">
-              </a>
-            </li>
-          </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item rounded">
+                        <a class="nav-link"
+                            href="https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023"
+                            target="_blank">
+                            Data by
+                            <img src="assets/spotify.png" alt="Spotify dataset" height="30" width="30" class="rounded">
+                        </a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <ul class="d-flex navbar-nav me-auto mb-2 mb-md-0 text-white">
+                        <li class="nav-item rounded">
+                            <a class="nav-link" href="https://www.uib.es/es/" target="_blank">
+                                <img src="assets/uib.png" alt="uib website" height="30" width="30">
+                            </a>
+                        </li>
+                        <li class="nav-item rounded">
+                            <a class="nav-link" href="https://github.com/Sergimayol/adiu-dashboard" target="_blank">
+                                <img src="assets/github.png" alt="source code - github" height="30" width="30">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-auto pb-2 pe-1 sticky-top simple-linear rounded-bottom-pill">
-        <div class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
-          <ul
-            class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-center align-items-center">
-            <li>
-              <a href="#chart1" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="center"
-                data-bs-original-title="Gráfico1" aria-label="Wordcloud of the artists names">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                  class="bi bi-bar-chart-line-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2z" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#chart2" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-                data-bs-original-title="Gráfico2" aria-label="Number of songs released per year">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                  class="bi bi-pie-chart-fill" viewBox="0 0 16 16">
-                  <path
-                    d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#modevsstreams" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip"
-                data-bs-placement="right" data-bs-original-title="Gráfico3" aria-label="Songs Mode vs Streams">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-boxes"
-                  viewBox="0 0 16 16">
-                  <path
-                    d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#chart4" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-                data-bs-original-title="Gráfico4" aria-label="Artists with most streams song">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                  class="bi bi-bar-chart-steps" viewBox="0 0 16 16">
-                  <path
-                    d="M.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 .5 0zM2 1.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1z" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#chart5" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-                data-bs-original-title="Gráfico5" aria-label="Most streamed songs">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="currentColor" viewBox="0 0 512 512"
-                  class="bi">
-                  <path
-                    d="M396.8 352h22.4c6.4 0 12.8-6.4 12.8-12.8V108.8c0-6.4-6.4-12.8-12.8-12.8h-22.4c-6.4 0-12.8 6.4-12.8 12.8v230.4c0 6.4 6.4 12.8 12.8 12.8zm-192 0h22.4c6.4 0 12.8-6.4 12.8-12.8V140.8c0-6.4-6.4-12.8-12.8-12.8h-22.4c-6.4 0-12.8 6.4-12.8 12.8v198.4c0 6.4 6.4 12.8 12.8 12.8zm96 0h22.4c6.4 0 12.8-6.4 12.8-12.8V204.8c0-6.4-6.4-12.8-12.8-12.8h-22.4c-6.4 0-12.8 6.4-12.8 12.8v134.4c0 6.4 6.4 12.8 12.8 12.8zM496 400H48V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16zm-387.2-48h22.4c6.4 0 12.8-6.4 12.8-12.8v-70.4c0-6.4-6.4-12.8-12.8-12.8h-22.4c-6.4 0-12.8 6.4-12.8 12.8v70.4c0 6.4 6.4 12.8 12.8 12.8z" />
-                </svg>
-              </a>
-            </li>
-            <li>
-              <a href="#chart6" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right"
-                data-bs-original-title="Gráfico6" aria-label="Songs streamed from the artist selected">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                  class="bi bi-graph-down" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd"
-                    d="M0 0h1v15h15v1H0V0Zm14.817 11.887a.5.5 0 0 0 .07-.704l-4.5-5.5a.5.5 0 0 0-.74-.037L7.06 8.233 3.404 3.206a.5.5 0 0 0-.808.588l4 5.5a.5.5 0 0 0 .758.06l2.609-2.61 4.15 5.073a.5.5 0 0 0 .704.07Z" />
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-sm p-5 text-center bg-image" style="background-image: url(assets/sound-wave.webp); 
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-auto pb-2 pe-1 sticky-top simple-linear rounded-bottom-pill">
+                <div class="d-flex flex-sm-column flex-row flex-nowrap align-items-center sticky-top">
+                    <ul
+                        class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center justify-content-center align-items-center">
+                        <li>
+                            <a href="#chart1" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip"
+                                data-bs-placement="center" data-bs-original-title="Gráfico1"
+                                aria-label="Wordcloud of the artists names">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-bar-chart-line-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#chart2" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip"
+                                data-bs-placement="right" data-bs-original-title="Gráfico2"
+                                aria-label="Number of songs released per year">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-pie-chart-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#modevsstreams" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip"
+                                data-bs-placement="right" data-bs-original-title="Gráfico3"
+                                aria-label="Songs Mode vs Streams">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-boxes" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#chart4" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip"
+                                data-bs-placement="right" data-bs-original-title="Gráfico4"
+                                aria-label="Artists with most streams song">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-bar-chart-steps" viewBox="0 0 16 16">
+                                    <path
+                                        d="M.5 0a.5.5 0 0 1 .5.5v15a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 .5 0zM2 1.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1-.5-.5v-1zm2 4a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-1z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#chart5" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip"
+                                data-bs-placement="right" data-bs-original-title="Gráfico5"
+                                aria-label="Most streamed songs">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="currentColor"
+                                    viewBox="0 0 512 512" class="bi">
+                                    <path
+                                        d="M396.8 352h22.4c6.4 0 12.8-6.4 12.8-12.8V108.8c0-6.4-6.4-12.8-12.8-12.8h-22.4c-6.4 0-12.8 6.4-12.8 12.8v230.4c0 6.4 6.4 12.8 12.8 12.8zm-192 0h22.4c6.4 0 12.8-6.4 12.8-12.8V140.8c0-6.4-6.4-12.8-12.8-12.8h-22.4c-6.4 0-12.8 6.4-12.8 12.8v198.4c0 6.4 6.4 12.8 12.8 12.8zm96 0h22.4c6.4 0 12.8-6.4 12.8-12.8V204.8c0-6.4-6.4-12.8-12.8-12.8h-22.4c-6.4 0-12.8 6.4-12.8 12.8v134.4c0 6.4 6.4 12.8 12.8 12.8zM496 400H48V80c0-8.84-7.16-16-16-16H16C7.16 64 0 71.16 0 80v336c0 17.67 14.33 32 32 32h464c8.84 0 16-7.16 16-16v-16c0-8.84-7.16-16-16-16zm-387.2-48h22.4c6.4 0 12.8-6.4 12.8-12.8v-70.4c0-6.4-6.4-12.8-12.8-12.8h-22.4c-6.4 0-12.8 6.4-12.8 12.8v70.4c0 6.4 6.4 12.8 12.8 12.8z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#chart6" class="nav-link py-2 px-2" title="" data-bs-toggle="tooltip"
+                                data-bs-placement="right" data-bs-original-title="Gráfico6"
+                                aria-label="Songs streamed from the artist selected">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-graph-down" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M0 0h1v15h15v1H0V0Zm14.817 11.887a.5.5 0 0 0 .07-.704l-4.5-5.5a.5.5 0 0 0-.74-.037L7.06 8.233 3.404 3.206a.5.5 0 0 0-.808.588l4 5.5a.5.5 0 0 0 .758.06l2.609-2.61 4.15 5.073a.5.5 0 0 0 .704.07Z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm p-5 text-center bg-image" style="background-image: url(assets/sound-wave.webp); 
       background-size:100% 100%;
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;">
-        <div class="mask pb-3" style="background-color: rgba(247, 168, 229, 0.85);">
-          <h1 class="text-center text-black">Most Streamed Spotify Songs in 2023 Dashboard</h1>
-          <div class="text-black font-weight-bold text-justify text-center my-3 py-2">
-            This is a dashboard that shows the most streamed songs in 2023. The data is from the <a
-              href="https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023" target="_blank">Kaggle
-              dataset</a> and it has been processed with Python and Pandas. The dashboard has been created with <a
-              href="https://www.highcharts.com/" target="_blank">Highcharts</a> and <a href="https://getbootstrap.com/"
-              target="_blank">Bootstrap</a>. The server-side is made with <a href="https://www.python.org/"
-              target="_blank">Python</a> and <a href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a>.
-          </div>
+                <div class="mask pb-3" style="background-color: rgba(247, 168, 229, 0.85);">
+                    <h1 class="text-center text-black">Most Streamed Spotify Songs in 2023 Dashboard</h1>
+                    <div class="text-black font-weight-bold text-justify text-center my-3 py-2">
+                        This is a dashboard that shows the most streamed songs in 2023. The data is from the <a
+                            href="https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023"
+                            target="_blank">Kaggle
+                            dataset</a> and it has been processed with Python and Pandas. The dashboard has been created
+                        with <a href="https://www.highcharts.com/" target="_blank">Highcharts</a> and <a
+                            href="https://getbootstrap.com/" target="_blank">Bootstrap</a>. The server-side is made with
+                        <a href="https://www.python.org/" target="_blank">Python</a> and <a
+                            href="https://fastapi.tiangolo.com/" target="_blank">FastAPI</a>.
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    </div>
-
-
     <!-- content -->
     <main class="container-fluid px-5">
-      <div class="flex align-items-center">
-        <!-- chart 1 -->
-        <div class="row">
-          <div class="col-sm-6">
-            <figure class="highcharts-figure">
-              <div id="chart1"></div>
-            </figure>
-          </div>
-          <!-- chart 2 -->
-          <div class="col-sm-6">
-            <figure class="highcharts-figure">
-              <div id="chart2"></div>
-            </figure>
-          </div>
+        <div class="flex align-items-center">
+            <!-- chart 1 -->
+            <div class="row">
+                <div class="col-sm-6">
+                    <figure class="highcharts-figure">
+                        <div id="chart1"></div>
+                    </figure>
+                </div>
+                <!-- chart 2 -->
+                <div class="col-sm-6">
+                    <figure class="highcharts-figure">
+                        <div id="chart4"></div>
+                    </figure>
+                </div>
+            </div>
+            <div class="row flex align-items-center justify-content-center">
+                <!-- chart 3 -->
+                <div class="col-sm-6">
+                    <figure class="highcharts-figure">
+                        <div id="chart2"></div>
+                    </figure>
+                </div>
+                <!-- chart 4 -->
+                <div class="col-sm-6">
+                    <figure class="highcharts-figure">
+                        <div id="chart5"></div>
+                    </figure>
+                </div>
+            </div>
+            <div class="row flex align-items-center justify-content-center">
+                <!-- chart 5 -->
+                <div class="col-sm-6">
+                    <label class="text-light" for="artistSelect">Choose an Artist to see their Top Songs:</label>
+                    <select aria-labelledby="Top songs from" id="artistSelect" class="form-select form-select-md mb-3">
+                        <option selected value="The Weeknd" aria-label="The Weeknd">The Weeknd</option>
+                        <option value="Taylor Swift" aria-label="Taylor Swift">Taylor Swift</option>
+                        <option value="Bad Bunny" aria-label="Bad Bunny">Bad Bunny</option>
+                        <option value="Ed Sheeran" aria-label="Ed Sheeran">Ed Sheeran</option>
+                    </select>
+                    <figure class="highcharts-figure">
+                        <div id="chart6"></div>
+                    </figure>
+                </div>
+                <!-- chart 6 -->
+                <div class="col-sm-6">
+                    <figure class="highcharts-figure">
+                        <div id="modevsstreams"></div>
+                    </figure>
+                </div>
+            </div>
         </div>
-        <!-- chart 3 -->
-        <div class="row flex align-items-center justify-content-center">
-          <div class="col-sm-11">
-            <figure class="highcharts-figure">
-              <div id="modevsstreams"></div>
-            </figure>
-          </div>
-        </div>
-        <!-- chart 4 -->
-        <div class="row flex align-items-center justify-content-center">
-          <div class="col-sm-11">
-            <figure class="highcharts-figure">
-              <div id="chart4"></div>
-            </figure>
-          </div>
-        </div>
-        <!-- chart 5 -->
-        <div class="row flex align-items-center justify-content-center">
-          <div class="col-sm-11">
-            <figure class="highcharts-figure">
-              <div id="chart5"></div>
-            </figure>
-          </div>
-        </div>
-        <!-- chart 6 -->
-        <div class="row flex align-items-center justify-content-center">
-          <label class="text-light" for="artistSelect">Choose an Artist to see their Top Songs:</label>
-          <select aria-labelledby="Top songs from" id="artistSelect" class="form-select form-select-md mb-3">
-            <option selected value="The Weeknd" aria-label="The Weeknd">The Weeknd</option>
-            <option value="Taylor Swift" aria-label="Taylor Swift">Taylor Swift</option>
-            <option value="Bad Bunny" aria-label="Bad Bunny">Bad Bunny</option>
-            <option value="Ed Sheeran" aria-label="Ed Sheeran">Ed Sheeran</option>
-          </select>
-          <div class="col-sm-11">
-            <figure class="highcharts-figure">
-              <div id="chart6"></div>
-            </figure>
-          </div>
-        </div>
-      </div>
     </main>
     <div class="container horizontal-gradient">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top text-light">
-        <div class="col-md-4 d-flex align-items-center">
-          <h2 class="text-sm px-5">AUTHORS: </h2>
-          <p>Sergi Mayol<br>Aina Maria Tur Serrano
-          </p>
-        </div>
-      </footer>
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top text-light">
+            <div class="col-md-4 d-flex align-items-center">
+                <h2 class="text-sm px-5">AUTHORS: </h2>
+                <p>Sergi Mayol<br>Aina Maria Tur Serrano</p>
+            </div>
+        </footer>
     </div>
 </body>
 
