@@ -1,5 +1,5 @@
 function exchart1(data) {
-  Highcharts.chart("chart1", {
+  Highcharts.chart("wordCloud", {
     accessibility: {
       screenReaderSection: {
         beforeChartFormat:

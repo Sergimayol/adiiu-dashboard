@@ -10,11 +10,11 @@ const artistSelect = document.getElementById("artistSelect");
 function loadChartsData(artistSelect) {
   const urls = [
     "http://127.0.0.1:8000/songs/artist-occurences",
-    "http://127.0.0.1:8000/songs/releaseday-numsongs",
-    "http://127.0.0.1:8000/songs/mode-streams",
     "http://127.0.0.1:8000/songs/artist-moststreams",
+    "http://127.0.0.1:8000/songs/releaseday-numsongs",
     "http://127.0.0.1:8000/songs/songs-moststreams",
     `http://127.0.0.1:8000/songs/${artistSelect}`,
+    "http://127.0.0.1:8000/songs/mode-streams",
   ];
 
   // Usar Promise.all() para manejar múltiples solicitudes en paralelo

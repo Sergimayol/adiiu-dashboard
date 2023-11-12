@@ -1,5 +1,5 @@
 function exchart3(data) {
-  Highcharts.chart("modevsstreams", {
+  Highcharts.chart("songsYear", {
     accessibility: {
       screenReaderSection: {
         beforeChartFormat:
@@ -10,41 +10,67 @@ function exchart3(data) {
       },
     },
     chart: {
-      plotBackgroundColor: null,
-      plotBorderWidth: null,
-      plotShadow: false,
-      type: "pie",
+      zoomType: "x",
     },
     title: {
-      text: "Songs Mode vs Streams",
-      align: "center",
-    },
-    subtitle: {
-      text: "",
+      text: "Number of songs released per year",
       align: "left",
     },
-    tooltip: {
-      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
+    subtitle: {
+      text:
+        document.ontouchstart === undefined
+          ? "Click and drag in the plot area to zoom in"
+          : "Pinch the chart to zoom in",
+      align: "left",
     },
-    accessibility: {
-      point: {
-        valueSuffix: "%",
+    xAxis: {
+      type: "date",
+      title: {
+        text: "Date",
       },
     },
+    yAxis: {
+      title: {
+        text: "Number of songs",
+      },
+    },
+    legend: {
+      enabled: true,
+    },
     plotOptions: {
-      pie: {
-        allowPointSelect: true,
-        cursor: "pointer",
-        dataLabels: {
-          enabled: true,
-          format: "<b>{point.name}</b>: {point.percentage:.1f} %",
+      area: {
+        fillColor: {
+          linearGradient: {
+            x1: 0,
+            y1: 0,
+            x2: 0,
+            y2: 1,
+          },
+          stops: [
+            [0, Highcharts.getOptions().colors[0]],
+            [
+              1,
+              Highcharts.color(Highcharts.getOptions().colors[0])
+                .setOpacity(0)
+                .get("rgba"),
+            ],
+          ],
         },
+        marker: {
+          radius: 2,
+        },
+        lineWidth: 1,
+        states: {
+          hover: {
+            lineWidth: 1,
+          },
+        },
+        threshold: null,
       },
     },
     series: [
       {
-        name: "Brands",
-        colorByPoint: true,
+        name: "Number of songs released per year",
         data: data,
       },
     ],

@@ -1,40 +1,52 @@
 function exchart6(data) {
-    var chartData = data.map(function(item) {
-        return { name: item[0], y: item[1] };
-      });
-    Highcharts.chart('chart6', {
-      accessibility: {
-        screenReaderSection: {
-          beforeChartFormat:
-            "<h1>{chartTitle}</h5>" +
-            "<div>{chartSubtitle}</div>" +
-            "<div>{chartLongdesc}</div>" +
-            "<div>{viewTableButton}</div>",
+  Highcharts.chart("modevsstreams", {
+    accessibility: {
+      screenReaderSection: {
+        beforeChartFormat:
+          "<h1>{chartTitle}</h5>" +
+          "<div>{chartSubtitle}</div>" +
+          "<div>{chartLongdesc}</div>" +
+          "<div>{viewTableButton}</div>",
+      },
+    },
+    chart: {
+      plotBackgroundColor: null,
+      plotBorderWidth: null,
+      plotShadow: false,
+      type: "pie",
+    },
+    title: {
+      text: "Songs Mode vs Streams",
+      align: "center",
+    },
+    subtitle: {
+      text: "",
+      align: "left",
+    },
+    tooltip: {
+      pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
+    },
+    accessibility: {
+      point: {
+        valueSuffix: "%",
+      },
+    },
+    plotOptions: {
+      pie: {
+        allowPointSelect: true,
+        cursor: "pointer",
+        dataLabels: {
+          enabled: true,
+          format: "<b>{point.name}</b>: {point.percentage:.1f} %",
         },
       },
-        chart: {
-          type: 'variablepie'
-        },
-        title: {
-          text: 'Songs streamed from the artist selected',
-          align: 'left'
-        },
-        subtitle: {
-          text: "Top songs from the artist selected",
-          align: "left",
-        },
-        tooltip: {
-          headerFormat: '',
-          pointFormat: '<span style="color:{point.color}">\u25CF</span> <b>{point.name}</b>: <b>{point.y}</b><br/>'
-        },
-        series: [{
-          minPointSize: 80,
-          innerSize: '40%',
-          zMin: 0,
-          name: 'Songs',
-          borderRadius: 5,
-          data: chartData,
-        }]
-      });
-   
+    },
+    series: [
+      {
+        name: "Brands",
+        colorByPoint: true,
+        data: data,
+      },
+    ],
+  });
 }

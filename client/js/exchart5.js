@@ -1,5 +1,8 @@
 function exchart5(data) {
-    Highcharts.chart("chart5", {
+    var chartData = data.map(function(item) {
+        return { name: item[0], y: item[1] };
+      });
+    Highcharts.chart('artistSongs', {
       accessibility: {
         screenReaderSection: {
           beforeChartFormat:
@@ -10,29 +13,28 @@ function exchart5(data) {
         },
       },
         chart: {
-            type: 'column',
+          type: 'variablepie'
         },
         title: {
-            text: 'Most streamed songs'
+          text: 'Songs streamed from the artist selected',
+          align: 'left'
         },
         subtitle: {
-          text: "The top songs with the number of streams of each one",
+          text: "Top songs from the artist selected",
           align: "left",
         },
-        plotOptions: {
-            column: {
-              depth: 25
-            }
-          },
-          xAxis: {
-            categories: data.map(item => item[0]),
-            title: {
-              text: "Songs",
-            },
-          },
-          series: [{
-            data:  data.map(item => item[1]),
-            colorByPoint: true,
-          }]
-    });
+        tooltip: {
+          headerFormat: '',
+          pointFormat: '<span style="color:{point.color}">\u25CF</span> <b>{point.name}</b>: <b>{point.y}</b><br/>'
+        },
+        series: [{
+          minPointSize: 80,
+          innerSize: '40%',
+          zMin: 0,
+          name: 'Songs',
+          borderRadius: 5,
+          data: chartData,
+        }]
+      });
+   
 }

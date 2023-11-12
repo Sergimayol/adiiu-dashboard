@@ -1,5 +1,5 @@
 function exchart4(data) {
-    Highcharts.chart("chart4", {
+    Highcharts.chart("topSongs", {
       accessibility: {
         screenReaderSection: {
           beforeChartFormat:
@@ -9,34 +9,30 @@ function exchart4(data) {
             "<div>{viewTableButton}</div>",
         },
       },
-      chart: {
-        type: 'bar',
-      },
-      title: {
-        text: "Artists with most streamed song",
-      },
-      subtitle: {
-        text: "The following chart shows the top ten artists with the most streamed songs",
-        align: "left",
-      },
-      xAxis: {
-        categories: data.map(item => item[0]),
-        title: {
-          text: "Artist",
+        chart: {
+            type: 'column',
         },
-      },
-      yAxis: {
         title: {
-          text: "Number of streams",
+            text: 'Most streamed songs'
         },
-      },
-      legend: {
-        enabled: true,
-      },
-      series:[{
-        name: 'Streaming Numbers',
-        data: data.map(item => item[1]),
-      }]
+        subtitle: {
+          text: "The top songs with the number of streams of each one",
+          align: "left",
+        },
+        plotOptions: {
+            column: {
+              depth: 25
+            }
+          },
+          xAxis: {
+            categories: data.map(item => item[0]),
+            title: {
+              text: "Songs",
+            },
+          },
+          series: [{
+            data:  data.map(item => item[1]),
+            colorByPoint: true,
+          }]
     });
-  }
-  
+}
