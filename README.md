@@ -38,6 +38,10 @@ The following are the benchmarks of the dashboard using [Lighthouse](https://dev
 
 To see the full report, you can check the [lighthouse report](./docs/lighthouse-report.html) file.
 
+##  Credits
+[Sergi Mayol](https://github.com/Sergimayol)
+[Aina Tur](https://github.com/AinaT9)
+
 ## License
 
 This project is licensed under the terms of the [MIT license](./LICENSE). See [LICENSE](./LICENSE) for more information.
