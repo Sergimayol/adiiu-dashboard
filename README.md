@@ -3,12 +3,12 @@
 First project of the ADIIU course 2023-2024. Consists of a dashboard that shows the data of the different sensors of a determined dataset, in this case the [Most Streamed Spotify Songs in 2023](https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023).
 
 The dashboard has 6 different charts: 
-    * Wordcloud of artists name: shows occorunces of every artist in the dataset
-    * Artists with most streamed song: bar chart with total amount of streams have 10 artists.
-    * Number of songs released per year: line chart showing the amount of songs released every year.
-    * Most streamed songs: column chart indicating the amount of streams have the top 15 songs.
-    * Songs streamed from the artist selected: pie chart showing the proportion of streams of some songs from the artist selected.
-    * Songs Mode vs Streams: pie chart
+* Wordcloud of artists name : shows occorunces of every artist in the dataset
+* Artists with most streamed song: bar chart with total amount of streams have 10 artists.
+* Number of songs released per year: line chart showing the amount of songs released every year.
+* Most streamed songs: column chart indicating the amount of streams have the top 15 songs.
+* Songs streamed from the artist selected: pie chart showing the proportion of streams of some songs from the artist selected.
+* Songs Mode vs Streams: pie chart
 
 It also has a sidebar easing the navigation through the dashboard.
 Some screenshot are below: 
