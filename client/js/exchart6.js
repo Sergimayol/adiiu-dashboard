@@ -20,7 +20,7 @@ function exchart6(data) {
       align: "center",
     },
     subtitle: {
-      text: "",
+      text: "The following pie chart shows the percentage of streams of each song mode",
       align: "left",
     },
     tooltip: {
